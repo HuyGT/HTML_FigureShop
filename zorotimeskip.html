@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css" />
+    <link rel="stylesheet" href="indexx.css">
+    <link rel="stylesheet" href="sanpham.css">
+
+</head>
+
+<body class="hm-gradient">
+    <nav class="navbar navbar-expand-md  navbar-light">
+        <div class="container">
+            <!-- logo  -->
+            <a class="navbar-brand" href="indexx.html" style="color: #f06;"><b class="logo">ShopFigure</b>.com</a>
+
+            <!-- navbar-toggler  -->
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <!-- form tìm kiếm  -->
+                <form class="form-inline ml-auto my-2 my-lg-0 mr-3">
+                    <div class="input-group" style="width: 520px;">
+                        <input type="text" class="form-control" aria-label="Small"
+                            placeholder="Nhập figure cần tìm kiếm...">
+                        <div class="input-group-append">
+                            <button type="button" class="btn" style="background-color: #f06; color: white;">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav mb-1 ml-auto">
+                    <div class="dropdown">
+                        <li class="nav-item account" type="button" class="btn dropdown" data-toggle="dropdown">
+                            <a href="#" class="btn btn-secondary rounded-circle">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link text-dark text-uppercase" href="#" style="display:inline-block">Tài
+                                khoản</a>
+                        </li>
+                        <div class="dropdown-menu btn-theme" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item nutdangky text-center mb-2 " href="#" data-toggle="modal"
+                                data-target="#formdangky">Đăng ký</a>
+                            <a class="dropdown-item nutdangnhap text-center" href="#" data-toggle="modal"
+                                data-target="#formdangnhap">Đăng nhập</a>
+                        </div>
+                    </div>
+                    <li class="nav-item ">
+                        <a href="#" class="btn btn-secondary rounded-circle">
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </a>
+                        <a class="nav-link text-dark  text-uppercase" href="#" style="display:inline-block">Giỏ
+                            Hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- form dang ky khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangky" data-backdrop="static" tabindex="-1" aria-labelledby="dangky_tieude"
+        aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập họ và tên" name="name" required
+                                autofocus>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password"
+                                required>
+                        </div>
+                        <div class="form-label-group mb-4">
+                            <input type="password" class="form-control" name="confirm_password"
+                                placeholder="Nhập lại mật khẩu" required>
+                        </div>
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white mt-3" type="submit"
+                            style="background: #F5A623">Đăng ký</button>
+                        <hr class="mt-3 mb-2">
+                        <div class="custom-control custom-checkbox">
+                            <p class="text-center">Bằng việc đăng ký, bạn đã đồng ý với DealBook về</p>
+                            <a href="#" class="text-decoration-none text-center" style="color: #F5A623">Điều khoản dịch
+                                vụ & Chính sách bảo mật</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- form dang nhap khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangnhap" data-backdrop="static" tabindex="-1"
+        aria-labelledby="dangnhap_tieude" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signin" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required autofocus>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="password" required>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                            <a href="#" class="float-right text-decoration-none" style="color: #F5A623">Quên mật
+                                khẩu</a>
+                        </div>
+
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white" type="submit"
+                            style="background: #F5A623">Đăng nhập</button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Đăng nhập bằng Google</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Facebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-1 mb-1">
+
+    <!-- thanh navbar ----------------------------------------------------->
+    <div class="container ">
+        <nav class="row btn  ">
+            <nav class="navbar navbar-expand-lg navbar-light  col ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto ">
+                        <li class="nav-item active btn-theme">
+                            <a class="nav-link" href="indexx.html">
+                                <i class="fas fa-home"></i>Trang chủ <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active btn-theme ">
+                            <a class="nav-link" href="sanphammoi.html"> Sản phẩm mới</a>
+                        </li>
+
+                        <li class="nav-item active btn-theme">
+                            <a class="nav-link" href="hotsale.html">Hot Sale</a>
+                        </li>
+                        <li class="nav-item active btn-theme">
+                            <a class="nav-link" href="cômbo.html">Combo</a>
+                        </li>
+                        <li class="nav-item active btn-theme">
+                            <a class="nav-link" href="chibi.html">Figure Chibi</a>
+                        </li>
+                        <li class="nav-item dropdown  btn-theme">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                                Anime
+                            </a>
+                            <div class="dropdown-menu btn-theme" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="onepiece.html">One Piece</a>
+                                <a class="dropdown-item" href="naruto.html">Naruto</a>
+                                <a class="dropdown-item" href="dragonball.html">Dragon Ball</a>
+                                <a class="dropdown-item" href="figurekhac.html">Figure Khác</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active btn-theme">
+                            <a class="nav-link" href="lh-gy.html">Liên Hệ - Góp Ý</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ml-auto btn-theme">
+                        <li class="nav-item">
+                            <a href="" class="nav-link " style="color: white;">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link " style="color: white;">Tiếng Việt</a>
+                        </li>
+                    </ul>
+            </nav>
+        </nav>
+    </div>
+
+    <!-- breadcrumb  -->
+    <section class="breadcrumbbar">
+        <div class="container">
+            <ol class="breadcrumb mb-0 p-0 bg-transparent">
+                <li class="breadcrumb-item"><a href="indexx.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="onepiece.html">Figure Onepiece</a></li>
+                <li class="breadcrumb-item active"><a href="#">Zoro Timeskip</a></li>
+            </ol>
+        </div>
+    </section>
+
+
+    <!-- nội dung của trang  -->
+    <section class="product-page mb-4 ">
+        <div class="container ">
+            <!-- chi tiết 1 sản phẩm -->
+            <div class="product-detail  p-4">
+                <div class="row">
+                    <!-- ảnh  -->
+                    <div class="col-md-5 ">
+                        <div class=" mb-4  box-hover">
+                            <a href="#"><img src="https://cf.shopee.vn/file/d697be00768c8a388df5fb59aaa3cf72"
+                                    alt="" class="img-change"></a>
+                            <a href="#"><img
+                                    src="https://cf.shopee.vn/file/f93a6ac560843f0b1353cf8bb2c73778"
+                                    class=""></a>
+                        </div>
+                        <div class="">
+                            <div class="img-nho float-left mb-4">
+                                <a href="#"><img src="https://cf.shopee.vn/file/d697be00768c8a388df5fb59aaa3cf72"
+                                        class="img-fluid " style="height: 100px;"></a>
+                            </div>
+                            <div class="img-nho float-left ml-3">
+                                <a href="#"><img
+                                        src="https://cf.shopee.vn/file/f93a6ac560843f0b1353cf8bb2c73778"
+                                        class="img-fluid" style="height: 100px;"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- thông tin sản phẩm: tên, giá bìa giá bán tiết kiệm, các khuyến mãi, nút chọn mua.... -->
+                    <div class="col-md-7 khoithongtin ">
+                        <div class="row">
+                            <div class="col-md-12 header">
+                                <h4 class="ten">Zoro Timeskip</h4>
+                                <div class="rate">
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star "></i>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="gia">
+                                    <div class="giabia">Giá bán ở ngoài:<span class="giacu ml-2">6.400.000 ₫</span>
+                                    </div>
+                                    <div class="giaban">Giá bán tại ShopFigure: <span
+                                            class="giamoi font-weight-bold">8.390.000 ₫ </span>
+                                    </div>
+                                    <div class="tietkiem">Tiết kiệm: <b>2.000.000 ₫</b>
+                                    </div>
+                                </div>
+                                <div class="uudai my-3">
+                                    <h6 class="header font-weight-bold">Khuyến mãi & Ưu đãi tại ShopFigure:</h6>
+                                    <ul>
+                                        <li><b>Miễn phí giao hàng </b> từ 50.000đ ở TP.Đà Nẵng và 30.000đ ở
+                                            Tỉnh/Thành khác <a href="#">>> Chi tiết</a></li>
+                                        <li><b>Combo Figure HOT - GIẢM 20% </b><a href="#">>>Xem ngay</a></li>
+                                        <li>Tặng lót chuột cho mỗi đơn hàng</li>
+                                        <li>Đặt Figure (theo yêu cầu)</li>
+                                    </ul>
+                                </div>
+                                <div class="soluong d-flex">
+                                    <label class="font-weight-bold">Số lượng: </label>
+                                    <div class="input-number input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text btn-spin btn-dec">-</span>
+                                        </div>
+                                        <input type="text" value="1" class="soluongsp  text-center">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text btn-spin btn-inc">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nutmua btn w-100 text-uppercase">Chọn mua</div>
+                                <a class="huongdanmuahang text-decoration-none" href="#">(Vui lòng xem hướng dẫn mua
+                                    hàng)</a>
+
+                            </div>
+                            <!-- thông tin khác của sản phẩm:  tác giả, ngày xuất bản, kích thước ....  -->
+                            <div class="col-md-5">
+                                <div class="thongtinsach">
+                                    <ul>
+                                        <li>Thương hiệu: <a href="#" class="tacgia">Bandai Namco</a></li>
+                                        <li>Ngày nhập: <b>04-2020</b></li>
+                                        <li>Kích thước: <b>20.5 x 13.5 cm</b></li>
+
+                                        <li>Cân nặng: <b>1 kg</b></li>
+                                        <li>Phiên bản: <b>Timeskip</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- decripstion của 1 sản phẩm: giới thiệu , đánh giá độc giả  -->
+                    <div class="product-description col-md-9">
+                        <!-- 2 tab ở trên  -->
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active text-uppercase" id="nav-gioithieu-tab"
+                                    data-toggle="tab" href="#nav-gioithieu" role="tab" aria-controls="nav-gioithieu"
+                                    aria-selected="true">Giới thiệu</a>
+                                <a class="nav-item nav-link text-uppercase" id="nav-danhgia-tab" data-toggle="tab"
+                                    href="#nav-danhgia" role="tab" aria-controls="nav-danhgia"
+                                    aria-selected="false">Đánh
+                                    giá </a>
+                            </div>
+                        </nav>
+                        <!-- nội dung của từng tab  -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active ml-3" id="nav-gioithieu" role="tabpanel"
+                                aria-labelledby="nav-gioithieu-tab">
+                                Là sản phẩm của Bandai Namco <br>
+                                Uy tín <br>
+                                Chất lượng <br>
+                                Được ShopFigure đảm bảo <br>
+                            </div>
+                            <div class="tab-pane fade" id="nav-danhgia" role="tabpanel"
+                                aria-labelledby="nav-danhgia-tab">
+                                <div class="row">
+                                    <div class="col-md-3 text-center">
+                                        <p class="tieude">Đánh giá trung bình</p>
+                                        <div class="diem">0/5</div>
+                                        <div class="sao">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <p class="sonhanxet text-muted">(0 nhận xét)</p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="tiledanhgia text-center">
+                                            <div class="motthanh d-flex align-items-center">5 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">4 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">3 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">2 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">1 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="btn vietdanhgia mt-3">Viết đánh giá của bạn</div>
+                                        </div>
+                                        <!-- nội dung của form đánh giá  -->
+                                        <div class="formdanhgia">
+                                            <h6 class="tieude text-uppercase">GỬI ĐÁNH GIÁ CỦA BẠN</h6>
+                                            <span class="danhgiacuaban">Đánh giá của bạn về sản phẩm này:</span>
+                                            <div
+                                                class="rating d-flex flex-row-reverse align-items-center justify-content-end">
+                                                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                                                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                                                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                                                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                                                <input type="radio" name="star" id="star5"><label for="star5"></label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtFullname w-100"
+                                                    placeholder="Mời bạn nhập tên(Bắt buộc)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtEmail w-100"
+                                                    placeholder="Mời bạn nhập email(Bắt buộc)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtComment w-100"
+                                                    placeholder="Đánh giá của bạn về sản phẩm này">
+                                            </div>
+                                            <div class="btn nutguibl">Gửi bình luận</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- het tab nav-danhgia  -->
+                        </div>
+                        <!-- het tab-content  -->
+                    </div>
+                    <!-- het product-description -->
+
+                </div>
+                <!-- het row  -->
+                <h3>Sản phẩm đề xuất cho bạn</h3>
+                <hr>
+                <section class="row">
+                    <article class="col">
+                        <div class="card float-left m-2 " style="width: 15rem; ">
+
+                            <div class="card-body">
+                                <a href="zorotimeskip.html"><img
+                                        src="https://cf.shopee.vn/file/d697be00768c8a388df5fb59aaa3cf72"
+                                        class="card-img-top anh w-100"></a>
+                            </div>
+                            <div class="card-footer ">
+                                <h3 class="card-title ten">Zoro Timeskip</h3>
+
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">6.500.200 ₫</div>
+                                    <div class="giacu text-muted">8.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+
+                                </div>
+
+                                <div class="home-product-item__favourite ">
+                                    <i class="fas fa-check "></i>
+                                    <span>Hàng mới</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card float-left m-2" style="width: 15rem; ">
+
+                            <div class="card-body">
+                                <a href="kakashi.html"><img
+                                        src="https://cf.shopee.vn/file/5b5a46d4f858f4ebac1eb97cd44df497"
+                                        class="card-img-top anh"></a>
+                            </div>
+                            <div class="card-footer">
+                                <h3 class="card-title ten">Kakashi Anbu (Bản 2 mặt)</h3>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">7.200.600 ₫</div>
+                                    <div class="giacu text-muted">6.230.000 ₫</div>
+                                    <div class="sale bg-danger">-50%</div>
+                                </div>
+                                <div class="home-product-item__favourite bg-danger">
+                                    <i class="fas fa-check "></i>
+                                    <span>Hot Sale</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card float-left m-2" style="width: 15rem; ">
+
+                            <div class="card-body">
+                                <a href="miku.html"><img
+                                        src="https://product.hstatic.net/1000160337/product/figure-052354_01_fea32c70fa074184af3e43ea6496091a_1024x1024.jpg"
+                                        class="card-img-top anh"></a>
+                            </div>
+                            <div class="card-footer">
+                                <h3 class="card-title ten">Hatsune Miku</h3>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">4.500.000 ₫</div>
+                                    <div class="giacu text-muted">4.050.000 ₫</div>
+                                    <div class="sale">-10%</div>
+                                </div>
+                                <div class="home-product-item__favourite ">
+                                    <i class="fas fa-check "></i>
+                                    <span>Hàng mới</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card float-left m-2" style="width: 15rem; ">
+
+                            <div class="card-body">
+                                <a href="goku.html"><img
+                                        src="https://cf.shopee.vn/file/8ba8224bf44402ebc4099da0ef8b647f"
+                                        class="card-img-top anh"></a>
+                            </div>
+                            <div class="card-footer">
+                                <h3 class="card-title ten">Goku SSJ2</h3>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">6.000.000 ₫</div>
+                                    <div class="giacu text-muted">5.400.000 ₫</div>
+                                    <div class="sale">-10%</div>
+                                </div>
+                                <div class="home-product-item__favourite bg-danger">
+                                    <i class="fas fa-check "></i>
+                                    <span>Hot Sale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <!-- het product-detail -->
+        </div>
+        <!-- het container  -->
+    </section>
+    <!-- het product-page -->
+
+    <!-- thanh cac dich vu :mien phi giao hang, qua tang mien phi ........ -->
+    <section class="abovefooter text-white" style="background-color: #CF111A;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-books.png" alt="icon-figure">
+                        <div class="noidung">
+                            <h3 class="tieude font-weight-bold">HƠN 99.000 Figure đẹp</h3>
+                            <p class="detail">Tuyển chọn bởi ShopFigure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-ship.png" alt="icon-ship">
+                        <div class="noidung">
+                            <h3 class="tieude font-weight-bold">MIỄN PHÍ GIAO HÀNG</h3>
+                            <p class="detail">Từ 50.000đ ở TP.Đà Nẵng</p>
+                            <p class="detail">Từ 30.000đ ở tỉnh thành khác</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-gift.png" alt="icon-gift">
+                        <div class="noidung">
+                            <h3 class="tieude font-weight-bold">QUÀ TẶNG MIỄN PHÍ</h3>
+                            <p class="detail">Tặng Figure</p>
+                            <p class="detail">Lót chuột</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-return.png" alt="icon-return">
+                        <div class="noidung">
+                            <h3 class="tieude font-weight-bold">ĐỔI TRẢ NHANH CHÓNG</h3>
+                            <p class="detail">Hàng bị lỗi được đổi trả nhanh chóng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="gioithieu">
+                        <h3 class="header text-uppercase font-weight-bold">Về ShopFigure</h3>
+                        <a href="#">Giới thiệu về Shopfigure</a>
+                        <a href="#">Tuyển dụng</a>
+                        <div class="fb-like" data-href="https://www.facebook.com/DealBook-110745443947730/"
+                            data-width="300px" data-layout="button" data-action="like" data-size="small"
+                            data-share="true"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="hotrokh">
+                        <h3 class="header text-uppercase font-weight-bold">HỖ TRỢ KHÁCH HÀNG</h3>
+                        <a href="#">Hướng dẫn đặt hàng</a>
+                        <a href="#">Phương thức thanh toán</a>
+                        <a href="#">Phương thức vận chuyển</a>
+                        <a href="#">Chính sách đổi trả</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="lienket">
+                        <h3 class="header text-uppercase font-weight-bold">HỢP TÁC VÀ LIÊN KẾT</h3>
+                        <img src="images/dang-ky-bo-cong-thuong.png" alt="dang-ky-bo-cong-thuong">
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="ptthanhtoan">
+                        <h3 class="header text-uppercase font-weight-bold">Phương thức thanh toán</h3>
+                        <img src="images/visa-payment.jpg" alt="visa-payment">
+                        <img src="images/master-card-payment.jpg" alt="master-card-payment">
+                        <img src="images/jcb-payment.jpg" alt="jcb-payment">
+                        <img src="images/atm-payment.jpg" alt="atm-payment">
+                        <img src="images/cod-payment.jpg" alt="cod-payment">
+                        <img src="images/payoo-payment.jpg" alt="payoo-payment">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- nut cuon len dau trang -->
+    <div class="fixed-bottom">
+        <div class="btn btn-warning float-right rounded-circle " id="backtotop" href="#" style="background:#CF111A;"><i
+                class="fa fa-chevron-up text-white"></i></div>
+    </div>
+
+
+    <!-- Footer -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css" />
+  <link rel="stylesheet" href="indexx.css">
+  <link rel="stylesheet" href="sanpham.css">
+</head>
+
+<body class="hm-gradient">
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-md  navbar-light">
+    <div class="container">
+      <!-- logo  -->
+      <a class="navbar-brand" href="indexx.html" style="color: #f06;"><b class="logo">ShopFigure</b>.com</a>
+
+      <!-- navbar-toggler  -->
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <!-- form tìm kiếm  -->
+        <form class="form-inline ml-auto my-2 my-lg-0 mr-3">
+          <div class="input-group" style="width: 520px;">
+            <input type="text" class="form-control" aria-label="Small" placeholder="Nhập figure cần tìm kiếm...">
+            <div class="input-group-append">
+              <button type="button" class="btn" style="background-color: #f06; color: white;">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <ul class="navbar-nav mb-1 ml-auto">
+          <div class="dropdown">
+            <li class="nav-item account" type="button" class="btn dropdown" data-toggle="dropdown">
+              <a href="#" class="btn btn-secondary rounded-circle">
+                <i class="fa fa-user"></i>
+              </a>
+              <a class="nav-link text-dark text-uppercase" href="#" style="display:inline-block">Tài
+                khoản</a>
+            </li>
+            <div class="dropdown-menu btn-theme" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item nutdangky text-center mb-2 " href="#" data-toggle="modal"
+                data-target="#formdangky">Đăng ký</a>
+              <a class="dropdown-item nutdangnhap text-center" href="#" data-toggle="modal"
+                data-target="#formdangnhap">Đăng nhập</a>
+            </div>
+          </div>
+          <li class="nav-item ">
+            <a href="#" class="btn btn-secondary rounded-circle">
+              <i class="fa fa-shopping-cart"></i>
+
+            </a>
+            <a class="nav-link text-dark  text-uppercase" href="#" style="display:inline-block">Giỏ
+              Hàng</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- form dang ky khi click vao button tren header-->
+  <div class="modal fade mt-5" id="formdangky" data-backdrop="static" tabindex="-1" aria-labelledby="dangky_tieude"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+            <li class="tab tab-dangnhap text-center">
+              <a class=" text-decoration-none">Đăng nhập</a>
+              <hr>
+            </li>
+            <li class="tab tab-dangky text-center">
+              <a class="text-decoration-none">Đăng ký</a>
+              <hr>
+            </li>
+          </ul>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form-signup" class="form-signin mt-2">
+            <div class="form-label-group">
+              <input type="text" class="form-control" placeholder="Nhập họ và tên" name="name" required autofocus>
+            </div>
+            <div class="form-label-group">
+              <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone" required>
+            </div>
+            <div class="form-label-group">
+              <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email" required>
+            </div>
+            <div class="form-label-group">
+              <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password" required>
+            </div>
+            <div class="form-label-group mb-4">
+              <input type="password" class="form-control" name="confirm_password" placeholder="Nhập lại mật khẩu"
+                required>
+            </div>
+            <button class="btn btn-lg btn-block btn-signin text-uppercase text-white mt-3" type="submit"
+              style="background: #F5A623">Đăng ký</button>
+            <hr class="mt-3 mb-2">
+            <div class="custom-control custom-checkbox">
+              <p class="text-center">Bằng việc đăng ký, bạn đã đồng ý với DealBook về</p>
+              <a href="#" class="text-decoration-none text-center" style="color: #F5A623">Điều khoản dịch
+                vụ & Chính sách bảo mật</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- form dang nhap khi click vao button tren header-->
+  <div class="modal fade mt-5" id="formdangnhap" data-backdrop="static" tabindex="-1" aria-labelledby="dangnhap_tieude"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+            <li class="tab tab-dangnhap text-center">
+              <a class=" text-decoration-none">Đăng nhập</a>
+              <hr>
+            </li>
+            <li class="tab tab-dangky text-center">
+              <a class="text-decoration-none">Đăng ký</a>
+              <hr>
+            </li>
+          </ul>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form-signin" class="form-signin mt-2">
+            <div class="form-label-group">
+              <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password" class="form-control" placeholder="Mật khẩu" name="password" required>
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+              <a href="#" class="float-right text-decoration-none" style="color: #F5A623">Quên mật
+                khẩu</a>
+            </div>
+
+            <button class="btn btn-lg btn-block btn-signin text-uppercase text-white" type="submit"
+              style="background: #F5A623">Đăng nhập</button>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                class="fab fa-google mr-2"></i> Đăng nhập bằng Google</button>
+            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Facebook</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-1 mb-1">
+
+  <!-- thanh navbar ----------------------------------------------------->
+  <div class="container ">
+    <nav class="row btn  ">
+      <nav class="navbar navbar-expand-lg navbar-light  col ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active btn-theme">
+              <a class="nav-link" href="indexx.html">
+                <i class="fas fa-home"></i>Trang chủ <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active btn-theme ">
+              <a class="nav-link" href="sanphammoi.html"> Sản phẩm mới</a>
+            </li>
+
+            <li class="nav-item active btn-theme">
+              <a class="nav-link" href="hotsale.html">Hot Sale</a>
+            </li>
+            <li class="nav-item active btn-theme">
+              <a class="nav-link" href="cômbo.html">Combo</a>
+            </li>
+            <li class="nav-item active btn-theme">
+              <a class="nav-link" href="chibi.html">Figure Chibi</a>
+            </li>
+            <li class="nav-item dropdown  btn-theme">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="color: white;">
+                Anime
+              </a>
+              <div class="dropdown-menu btn-theme" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="onepiece.html">One Piece</a>
+                <a class="dropdown-item" href="naruto.html">Naruto</a>
+                <a class="dropdown-item" href="dragonball.html">Dragon Ball</a>
+                <a class="dropdown-item" href="figurekhac.html">Figure Khác</a>
+              </div>
+            </li>
+            <li class="nav-item active btn-theme">
+              <a class="nav-link" href="lh-gy.html">Liên Hệ - Góp Ý</a>
+            </li>
+            
+          </ul>
+          <ul class="navbar-nav ml-auto btn-theme">
+            <li class="nav-item">
+              <a href="" class="nav-link " style="color: white;">English</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link " style="color: white;">Tiếng Việt</a>
+            </li>
+          </ul>
+      </nav>
+    </nav>
+  </div>
+
+  <!-- breadcrumb  -->
+  <section class="breadcrumbbar">
+    <div class="container">
+      <ol class="breadcrumb mb-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="indexx.html">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Sản Phẩm Mới</a></li>
+      </ol>
+    </div>
+  </section>
+  <!--menu side bar-->
+
+
+
+  <div class="container">
+    <section class="row">
+      
+        <nav id="sidebar">
+
+
+          <ul class="list-unstyled components">
+            <!--<p>Dummy Heading</p>-->
+            <li class="active">
+              <a href="#DANHMUCSubmenu" data-toggle="collapse" aria-expanded="false">DANH MỤC</a>
+              <ul class="collapse list-unstyled" id="DANHMUCSubmenu">
+                <li><a href="#">HÀNG BÁN CHẠY</a></li>
+                <li><a href="#">ĐÁNH GIÁ CAO</a></li>
+                <li><a href="#">ĐỀ XUẤT</a></li>
+                <li><a href="#">ĐANG CÓ GIẢM GIÁ</a></li>
+              </ul>
+            </li>
+            <li>
+
+              <a href="#">CÁC BẢN GIỚI HẠN</a>
+
+
+            </li>
+            <li>
+              <a href="#">PHỤ KIỆN</a>
+            </li>
+            <li>
+              <a href="#">BỘ FIGURE</a>
+            </li>
+            <li class="active">
+              <a href="#GIASubmenu" data-toggle="collapse" aria-expanded="false">SẮP XẾP GIÁ</a>
+              <ul class="collapse list-unstyled" id="GIASubmenu">
+                <li><a href="#">1 TRIỆU TRỞ XUỐNG</a></li>
+                <li><a href="#">1 TRIỆU ĐẾN 2 TRIỆU</a></li>
+                <li><a href="#">2 TRIỆU ĐẾN 3 TRIỆU</a></li>
+                <li><a href="#">3 TRIỆU TRỞ LÊN</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </nav>
+
+      </aside>
+      <article class="col-9 ">
+
+
+        <nav class="navbar navbar-default bg-white">
+          <div class="container-fluid">
+            <h5>Sản Phẩm Mới</h5>
+            <div class="navbar-header">
+              <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn active">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+
+          </div>
+        </nav>
+
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="http://ae01.alicdn.com/kf/H46136cdb9414469bb82bf709208ce10am.jpg"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Itachi Edo Tensei</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://cf.shopee.vn/file/0360fdf0ef199f0ccd2710a5d14dcffc"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Kurumi</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://cf.shopee.vn/file/60fedbc18715e54ce7867df54f1d76ef"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Miku</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://ae01.alicdn.com/kf/H54b1719188bc44cd820ee8ea033646271/Hot-Mage-Azur-Lane-Kaga-1-7-Scale-Sexy-Girl-Figure-Collectible-PVC-Model-Toy-Doll.jpg"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Kaga</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://cf.shopee.vn/file/e2e82b409e9c06348ed7cbaaeb0cac86"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Yatogami</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://i.pinimg.com/originals/8f/b8/be/8fb8be5c1a01e801ecd85e573dc273ab.png"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Albedo</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://img.joomcdn.net/ee1a0c2034070dd8bb153dbb178e2418f6c6d274_original.jpeg"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Lacia</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://animecorners.com/wp-content/uploads/2020/03/Freeing-Danganronpa-Kyoko-Kirigiri-Bunny-Ver-PVC-Action-Figure-Anime-Figure-Model-Toys-Sexy-Girl-Figure.jpg"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Kirigiri</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row float-left m-1">
+
+
+          <div class="card float-left m-1" style="width: 15rem; ">
+
+            <div class="card-body">
+              <a href="itachiedotensei.html"><img
+                  src="https://cdn.shopify.com/s/files/1/0144/1058/0022/products/bleach-kurosaki-ichigo-japanese-anime-figure-figuresworldstore-action-figures_887_800x.jpg?v=1571716386"
+                  class="card-img-top anh"></a>
+            </div>
+            <div class="card-footer">
+              <h3 class="card-title ten">Ichigo</h3>
+              <div class="gia d-flex align-items-baseline">
+                <div class="giamoi">5.400.000₫</div>
+                <div class="giacu text-muted">6.000.000 ₫</div>
+                <div class="sale">-10%</div>
+              </div>
+              <div class="home-product-item__favourite ">
+                <i class="fas fa-check "></i>
+                <span>Hàng mới</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="float-left ml-2 ">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link " href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </div>
+  <!-- thanh cac dich vu :mien phi giao hang, qua tang mien phi ........ -->
+  <section class="abovefooter text-white" style="background-color: #CF111A;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <div class="dichvu d-flex align-items-center">
+            <img src="images/icon-books.png" alt="icon-figure">
+            <div class="noidung">
+              <h3 class="tieude font-weight-bold">HƠN 99.000 Figure đẹp</h3>
+              <p class="detail">Tuyển chọn bởi ShopFigure</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dichvu d-flex align-items-center">
+            <img src="images/icon-ship.png" alt="icon-ship">
+            <div class="noidung">
+              <h3 class="tieude font-weight-bold">MIỄN PHÍ GIAO HÀNG</h3>
+              <p class="detail">Từ 50.000đ ở TP.Đà Nẵng</p>
+              <p class="detail">Từ 30.000đ ở tỉnh thành khác</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dichvu d-flex align-items-center">
+            <img src="images/icon-gift.png" alt="icon-gift">
+            <div class="noidung">
+              <h3 class="tieude font-weight-bold">QUÀ TẶNG MIỄN PHÍ</h3>
+              <p class="detail">Tặng Figure</p>
+              <p class="detail">Lót chuột</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="dichvu d-flex align-items-center">
+            <img src="images/icon-return.png" alt="icon-return">
+            <div class="noidung">
+              <h3 class="tieude font-weight-bold">ĐỔI TRẢ NHANH CHÓNG</h3>
+              <p class="detail">Hàng bị lỗi được đổi trả nhanh chóng</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer  -->
+  <footer>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-3 col-xs-6">
+          <div class="gioithieu">
+            <h3 class="header text-uppercase font-weight-bold">Về ShopFigure</h3>
+            <a href="#">Giới thiệu về Shopfigure</a>
+            <a href="#">Tuyển dụng</a>
+            <div class="fb-like" data-href="https://www.facebook.com/DealBook-110745443947730/" data-width="300px"
+              data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <div class="hotrokh">
+            <h3 class="header text-uppercase font-weight-bold">HỖ TRỢ KHÁCH HÀNG</h3>
+            <a href="#">Hướng dẫn đặt hàng</a>
+            <a href="#">Phương thức thanh toán</a>
+            <a href="#">Phương thức vận chuyển</a>
+            <a href="#">Chính sách đổi trả</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <div class="lienket">
+            <h3 class="header text-uppercase font-weight-bold">HỢP TÁC VÀ LIÊN KẾT</h3>
+            <img src="images/dang-ky-bo-cong-thuong.png" alt="dang-ky-bo-cong-thuong">
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <div class="ptthanhtoan">
+            <h3 class="header text-uppercase font-weight-bold">Phương thức thanh toán</h3>
+            <img src="images/visa-payment.jpg" alt="visa-payment">
+            <img src="images/master-card-payment.jpg" alt="master-card-payment">
+            <img src="images/jcb-payment.jpg" alt="jcb-payment">
+            <img src="images/atm-payment.jpg" alt="atm-payment">
+            <img src="images/cod-payment.jpg" alt="cod-payment">
+            <img src="images/payoo-payment.jpg" alt="payoo-payment">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- nut cuon len dau trang -->
+  <div class="fixed-bottom">
+    <div class="btn btn-warning float-right rounded-circle " id="backtotop" href="#" style="background:#CF111A;"><i
+        class="fa fa-chevron-up text-white"></i></div>
+  </div>
+
+
+</body>
+
+</html>
